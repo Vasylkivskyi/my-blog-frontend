@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap&subset=cyrillic");
 
 body {
   background: #212121;
@@ -6,6 +6,7 @@ body {
 
   .headers-font {
     color: #9900ff;
+    font-weight: bold;
   }
 }
 
