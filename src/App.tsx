@@ -1,12 +1,13 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
+import Nav from "./components/nav/Nav";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1 className='headers-font'>Pavlo Vasylkivskyi blog</h1>
+      <Nav />
     </div>
   );
-}
+};
 
 export default App;

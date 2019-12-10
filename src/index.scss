@@ -1,12 +1,29 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300|Montserrat:400,700,900&display=swap");
 
 body {
-  background: #212121;
-  font-family: "Roboto", sans-serif;
+  background: #282c35;
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.88);
 
-  .headers-font {
-    color: #9900ff;
-    font-weight: bold;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: 900;
+  }
+
+  a {
+    color: #e60afc;
+    text-decoration: none;
+    border-bottom: 1px solid #e60afc;
   }
 }
 
