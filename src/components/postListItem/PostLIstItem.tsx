@@ -1,5 +1,7 @@
 import React from "react";
 import "./PostLIstItem.scss";
+import { Link } from "react-router-dom";
+import { slugify } from "../../Utils/RoutesHelper";
 
 interface PostLIstItemInterface {
   title: string;
@@ -9,7 +11,6 @@ interface PostLIstItemInterface {
 
 const PostLIstItem: React.FC<PostLIstItemInterface> = ({ title, text }) => {
   const wordsLength = text.split(" ").length;
-  //Math.ceil(text.length / 600);
   const readTime =
     wordsLength < 200
       ? "less than 1 min read"
@@ -30,7 +31,9 @@ const PostLIstItem: React.FC<PostLIstItemInterface> = ({ title, text }) => {
 
   return (
     <div className="post-list-item">
-      <h2>{title}</h2>
+      <Link to={`/${slugify(title)}`}>
+        <h2>{title}</h2>
+      </Link>
       <div className="post-list-item__info">
         December 3, 2018 • {renderCups()} {readTime}
       </div>
