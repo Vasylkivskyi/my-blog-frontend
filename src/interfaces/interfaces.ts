@@ -10,4 +10,5 @@ export interface MatchIncludedInterface {
 
 export interface WithRouterInterface {
   location: any;
+  history?: any;
 }

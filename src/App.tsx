@@ -5,16 +5,19 @@ import Post from "./components/post/Post";
 import PostList from "./containers/postsList/PostList";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
         <Nav />
-        <Switch>
-          <Route path="/" exact component={PostList} />
-          <Route path="/:post" exact component={Post} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route path="/" exact component={PostList} />
+            <Route path="/:post" exact component={Post} />
+          </Switch>
+        </ScrollToTop>
         <Footer />
       </div>
     </Router>
