@@ -1,26 +1,21 @@
 import React from "react";
-import homepage from "../../homepage.jpg";
 import "./nav.scss";
 import { Link } from "react-router-dom";
+import Info from "../info/Info";
+import { withRouter } from "react-router-dom";
+import { WithRouterInterface } from "../../interfaces/interfaces";
 
-const Nav: React.FC = () => {
+const Nav: React.FC<WithRouterInterface> = ({ location }) => {
+  const cssClass = location.pathname.length > 1 ? "without-info" : "";
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${cssClass}`}>
       <Link to="/">
-        <h1>Inside the flow</h1>
+        <h1 className="site-name">Inside the flow</h1>
       </Link>
-      <div className="info">
-        <img className="image" src={homepage} alt="Pavlo" />
-        <div className="info-text">
-          <p>
-            Personal blog by{" "}
-            <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>.
-          </p>
-          <p>This is where I write down my thoughts.</p>
-        </div>
-      </div>
+      {location.pathname.length === 1 && <Info />}
     </div>
   );
 };
 
-export default Nav;
+export default withRouter(Nav);

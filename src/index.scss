@@ -40,6 +40,10 @@ body {
     color: #e60afc;
     text-decoration: none;
     border-bottom: 1px solid #e60afc;
+
+    &:hover {
+      border-bottom: none;
+    }
   }
 }
 

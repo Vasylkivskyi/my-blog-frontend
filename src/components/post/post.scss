@@ -2,4 +2,11 @@
   p {
     line-height: 27px;
   }
+
+  .links {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -2,9 +2,10 @@ import React from "react";
 import "./post.scss";
 import { deslugify } from "../../Utils/RoutesHelper";
 import { MatchIncludedInterface } from "../../interfaces/interfaces";
+import Info from "../info/Info";
+import { Link } from "react-router-dom";
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
-  console.log(match);
   const { params } = match;
   const { post } = params;
 
@@ -61,6 +62,15 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
         debitis placeat repellendus delectus sed voluptate ullam itaque aliquam
         quis quidem. Adipisci, accusamus.
       </p>
+      <div className="links">
+        <Link to="/">
+          <div className="link-item">← Previous article</div>
+        </Link>
+        <Link to="/">
+          <div className="link-item">Next article →</div>
+        </Link>
+      </div>
+      <Info />
     </div>
   );
 };

@@ -7,3 +7,7 @@ export interface MatchInterface {
 export interface MatchIncludedInterface {
   match: MatchInterface;
 }
+
+export interface WithRouterInterface {
+  location: any;
+}
