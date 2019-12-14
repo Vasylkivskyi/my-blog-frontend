@@ -1,6 +1,21 @@
 .footer {
   width: 100%;
   padding: 2rem 0.5rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 50px;
+
+  .social-links {
+    border: none;
+    margin-left: 10px;
+    .social {
+      height: 30px;
+      width: 30px;
+
+      &:hover {
+        fill: forestgreen;
+      }
+    }
+  }
 }
