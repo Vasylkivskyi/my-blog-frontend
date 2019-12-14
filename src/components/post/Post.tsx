@@ -4,6 +4,7 @@ import { deslugify } from "../../Utils/RoutesHelper";
 import { MatchIncludedInterface } from "../../interfaces/interfaces";
 import Info from "../info/Info";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
@@ -11,6 +12,9 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
 
   return (
     <div className="post">
+      <Helmet>
+        <title>{deslugify(post)}</title>
+      </Helmet>
       <h1>{deslugify(post)}</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor hic sequi

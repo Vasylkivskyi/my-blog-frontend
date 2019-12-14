@@ -10,7 +10,7 @@ const ScrollToTop: React.FC<WithRouterInterface> = ({ history, children }) => {
     return () => {
       unListen();
     };
-  }, []);
+  }, [history]);
 
   return <Fragment>{children}</Fragment>;
 };

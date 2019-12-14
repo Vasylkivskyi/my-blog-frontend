@@ -1,5 +1,5 @@
 import React from "react";
-import homepage from "../../homepage.jpg";
+import homepage from "../../images/homepage.jpg";
 import "./info.scss";
 import { withRouter } from "react-router-dom";
 import { WithRouterInterface } from "../../interfaces/interfaces";
