@@ -7,8 +7,14 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import CommentsList from "../../containers/commentsList/CommentsList";
 import { comments } from "../../commentsMoct";
+import PostInfo from "../postInfo/PostInfo";
 
-const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
+interface PostInterface extends MatchIncludedInterface {
+  date?: string;
+  text: string;
+}
+
+const Post: React.FC<PostInterface> = ({ match, date, text }) => {
   const { params } = match;
   const { post } = params;
 
@@ -18,6 +24,9 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
         <title>{deslugify(post)}</title>
       </Helmet>
       <h1>{deslugify(post)}</h1>
+      <div className="info-container">
+        <PostInfo text={"fsldfjsdl"} date="December 3, 2018" />
+      </div>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor hic sequi
         quidem. Sapiente rem accusamus ad modi aperiam in ipsum, animi, unde
