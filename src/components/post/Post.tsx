@@ -5,6 +5,8 @@ import { MatchIncludedInterface } from "../../interfaces/interfaces";
 import Info from "../info/Info";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import CommentsList from "../../containers/commentsList/CommentsList";
+import { comments } from "../../commentsMoct";
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
@@ -74,6 +76,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
           <div className="link-item">Next article →</div>
         </Link>
       </div>
+      <CommentsList postTitle={deslugify(post)} comments={comments} />
       <Info />
     </div>
   );
