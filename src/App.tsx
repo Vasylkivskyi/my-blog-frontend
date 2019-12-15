@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Nav from "./components/nav/Nav";
-import Post from "./components/post/Post";
+import Post from "./containers/post/Post";
 import PostList from "./containers/postsList/PostList";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

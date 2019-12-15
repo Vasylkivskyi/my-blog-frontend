@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./post.scss";
 import { deslugify } from "../../Utils/RoutesHelper";
 import { MatchIncludedInterface } from "../../interfaces/interfaces";
-import Info from "../info/Info";
+import Info from "../../components/info/Info";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import CommentsList from "../../containers/commentsList/CommentsList";
+import CommentsList from "../commentsList/CommentsList";
 import { comments } from "../../commentsMoct";
-import PostInfo from "../postInfo/PostInfo";
+import PostInfo from "../../components/postInfo/PostInfo";
 
-interface PostInterface extends MatchIncludedInterface {
-  date?: string;
-  text: string;
-}
-
-const Post: React.FC<PostInterface> = ({ match, date, text }) => {
+const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
   const { post } = params;
+
+  const [postState, setPostState] = useState({});
+
+  useEffect(() => {
+    console.log("test");
+  }, []);
 
   return (
     <section className="post">
@@ -89,7 +90,9 @@ const Post: React.FC<PostInterface> = ({ match, date, text }) => {
         </Link>
       </div>
       <CommentsList postTitle={deslugify(post)} comments={comments} />
-      <Info />
+      <div className="info-container">
+        <Info />
+      </div>
     </section>
   );
 };

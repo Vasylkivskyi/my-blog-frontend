@@ -1,21 +1,45 @@
 .footer {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 50px;
+  padding-bottom: 20px;
+  border-top: 1px solid #e60afc;
 
-  .social-links {
-    border: none;
+  .quote-container {
+    width: 100%;
+    text-align: center;
 
-    &:first-child {
-      margin-left: 10px;
+    .quote {
+      font-style: italic;
+      font-size: 14px;
+      color: #e60afc;
     }
-
-    .social {
-      align-self: center;
-      height: 40px;
-      width: 40px;
+    .author {
+      font-style: normal;
     }
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .social-links {
+      border: none;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+
+      .social {
+        align-self: center;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  .date {
+    text-align: center;
+    color: #e60afc;
+    margin-top: 5px;
   }
 }
