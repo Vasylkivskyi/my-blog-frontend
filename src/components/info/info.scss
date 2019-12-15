@@ -17,8 +17,14 @@
       border-radius: 50%;
       margin: 1em 0.5em 1em 0;
     }
-    .info-text {
-      color: white;
+
+    .space-between {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .info-text {
+        color: white;
+      }
     }
   }
 }
