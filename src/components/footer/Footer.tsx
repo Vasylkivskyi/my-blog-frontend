@@ -37,10 +37,10 @@ const Footer = () => {
     <footer className="footer">
       {quote.text.length > 0 && (
         <div className="quote-container">
-          <p className="quote">
+          <div className="quote">
             “{quote.text}”{" "}
             {quote.author && <span className="author">{quote.author}</span>}
-          </p>
+          </div>
         </div>
       )}
       <div className="social-container">
