@@ -5,11 +5,11 @@ import { posts } from "../../postMock";
 
 const PostList: React.FC = () => {
   return (
-    <div className="post-list">
+    <section className="post-list">
       {posts.map(post => (
         <PostListItem key={post.id} title={post.title} text={post.text} />
       ))}
-    </div>
+    </section>
   );
 };
 

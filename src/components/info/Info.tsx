@@ -10,16 +10,16 @@ const Info: React.FC<WithRouterInterface> = ({ location }) => {
       {location.pathname.length > 1 && (
         <h3 className="site-name">Inside the flow</h3>
       )}
-      <div className="info">
+      <figure className="info">
         <img className="image" src={homepage} alt="Pavlo" />
-        <div className="info-text">
+        <figcaption className="info-text">
           <p>
             Personal blog by{" "}
             <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>.
           </p>
           <p>This is where I write down my thoughts.</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
     </div>
   );
 };

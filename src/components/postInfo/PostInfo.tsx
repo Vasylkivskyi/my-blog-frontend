@@ -26,12 +26,12 @@ const PostInfo: React.FC<PostInfoInterface> = ({ text, date }) => {
   };
 
   return (
-    <div className="post-list-item__info">
+    <time className="post-list-item__info">
       <span role="img" aria-label="coffee">
         ⏳{" "}
       </span>
       {date} • {renderCups()} {readTime}
-    </div>
+    </time>
   );
 };
 

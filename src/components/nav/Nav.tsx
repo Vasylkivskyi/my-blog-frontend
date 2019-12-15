@@ -9,12 +9,12 @@ const Nav: React.FC<WithRouterInterface> = ({ location }) => {
   const cssClass = location.pathname.length > 1 ? "without-info" : "";
 
   return (
-    <div className={`navbar ${cssClass}`}>
+    <nav className={`navbar ${cssClass}`}>
       <Link to="/">
         <h1 className="site-name">Inside the flow</h1>
       </Link>
       {location.pathname.length === 1 && <Info />}
-    </div>
+    </nav>
   );
 };
 
