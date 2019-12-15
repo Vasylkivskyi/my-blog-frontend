@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./styles/App.scss";
 import Nav from "./components/nav/Nav";
 import Post from "./containers/post/Post";
 import PostList from "./containers/postsList/PostList";

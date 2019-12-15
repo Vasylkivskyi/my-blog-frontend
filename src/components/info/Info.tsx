@@ -18,7 +18,6 @@ const Info: React.FC<WithRouterInterface> = ({ location }) => {
             <p>
               Personal blog by{" "}
               <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>
-              .
             </p>
             <p>This is where I write down my thoughts.</p>
           </figcaption>
