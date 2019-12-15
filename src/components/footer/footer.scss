@@ -8,14 +8,15 @@
 
   .social-links {
     border: none;
-    margin-left: 10px;
-    .social {
-      height: 30px;
-      width: 30px;
 
-      &:hover {
-        fill: forestgreen;
-      }
+    &:first-child {
+      margin-left: 10px;
+    }
+
+    .social {
+      align-self: center;
+      height: 40px;
+      width: 40px;
     }
   }
 }
