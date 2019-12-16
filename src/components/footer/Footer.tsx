@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./footer.scss";
-import facebook from "../../images/facebook.svg";
-import twitter from "../../images/twitter.svg";
+import React, { useState, useEffect } from 'react';
+import './footer.scss';
+import facebook from '../../images/facebook.svg';
+import twitter from '../../images/twitter.svg';
 
 const Footer = () => {
   const [quote, setQuote] = useState({
-    text: "",
-    author: ""
+    text: '',
+    author: '',
   });
 
   const date = new Date();
@@ -14,12 +14,13 @@ const Footer = () => {
 
   const getQuoteOfTheDay = async () => {
     try {
-      const data = await fetch("http://quotes.rest/qod.json");
+      // eslint-disable-next-line no-undef
+      const data = await fetch('http://quotes.rest/qod.json');
       const quotData = await data.json();
       console.log(quotData.contents.quotes[0]);
       setQuote({
         text: quotData.contents.quotes[0].quote,
-        author: quotData.contents.quotes[0].author
+        author: quotData.contents.quotes[0].author,
       });
       return quotData;
     } catch (err) {
@@ -38,7 +39,10 @@ const Footer = () => {
       {quote.text.length > 0 && (
         <div className="quote-container">
           <div className="quote">
-            “{quote.text}”{" "}
+            “
+            {quote.text}
+”
+            {' '}
             {quote.author && <span className="author">{quote.author}</span>}
           </div>
         </div>

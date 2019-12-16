@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import "./post.scss";
-import { deslugify } from "../../Utils/RoutesHelper";
-import { MatchIncludedInterface } from "../../interfaces/interfaces";
-import Info from "../../components/info/Info";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import CommentsList from "../commentsList/CommentsList";
-import { comments } from "../../commentsMoct";
-import PostInfo from "../../components/postInfo/PostInfo";
+import React, { useEffect, useState } from 'react';
+import './post.scss';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { deslugify } from '../../Utils/RoutesHelper';
+import { MatchIncludedInterface } from '../../interfaces/interfaces';
+import Info from '../../components/info/Info';
+import CommentsList from '../commentsList/CommentsList';
+import comments from '../../commentsMoct';
+import PostInfo from '../../components/postInfo/PostInfo';
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
@@ -16,7 +16,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const [postState, setPostState] = useState({});
 
   useEffect(() => {
-    console.log("test");
+    console.log('test');
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
       </Helmet>
       <h1>{deslugify(post)}</h1>
       <div className="info-container">
-        <PostInfo text={"fsldfjsdl"} date="December 3, 2018" />
+        <PostInfo text="fsldfjsdl" date="December 3, 2018" />
       </div>
       <article>
         <p>

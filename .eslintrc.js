@@ -14,5 +14,12 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.tsx', '**/test.ts'] }],
     '@typescript-eslint/indent': [2, 2],
+    'react/prop-types': "off",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'consistent-return': 'off',
+  },
+  'globals': {
+    'window': true,
+    'document': true,
   },
 };

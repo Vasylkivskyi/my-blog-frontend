@@ -1,12 +1,12 @@
-import React from "react";
-import "./nav.scss";
-import { Link } from "react-router-dom";
-import Info from "../info/Info";
-import { withRouter } from "react-router-dom";
-import { WithRouterInterface } from "../../interfaces/interfaces";
+import React from 'react';
+import './nav.scss';
+import { Link, withRouter } from 'react-router-dom';
+import Info from '../info/Info';
+
+import { WithRouterInterface } from '../../interfaces/interfaces';
 
 const Nav: React.FC<WithRouterInterface> = ({ location }) => {
-  const cssClass = location.pathname.length > 1 ? "without-info" : "";
+  const cssClass = location.pathname.length > 1 ? 'without-info' : '';
 
   return (
     <nav className={`navbar ${cssClass}`}>
