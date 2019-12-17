@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import homepage from '../../images/homepage.jpg';
-import Share from '../share/Share';
 import './info.scss';
 import { WithRouterInterface } from '../../interfaces/interfaces';
 
@@ -12,17 +11,14 @@ const Info: React.FC<WithRouterInterface> = ({ location }) => (
     )}
     <figure className="info">
       <img className="image" src={homepage} alt="Pavlo" />
-      <div className="space-between">
-        <figcaption className="info-text">
-          <p>
+      <figcaption className="info-text">
+        <p>
               Personal blog by
-            {' '}
-            <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>
-          </p>
-          <p>This is where I write down my thoughts.</p>
-        </figcaption>
-        <Share />
-      </div>
+          {' '}
+          <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>
+        </p>
+        <p>This is where I write down my thoughts.</p>
+      </figcaption>
     </figure>
   </div>
 );
