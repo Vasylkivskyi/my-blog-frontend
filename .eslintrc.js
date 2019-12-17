@@ -17,6 +17,7 @@ module.exports = {
     'react/prop-types': "off",
     '@typescript-eslint/explicit-function-return-type': 'off',
     'consistent-return': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
   },
   'globals': {
     'window': true,

@@ -18,4 +18,36 @@
       border: none;
     }
   }
+
+  .modal {
+    position: fixed;
+    z-index: 100;
+    background: rgba(silver, 0.53);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .share-window {
+      position: relative;
+
+      .close {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+      }
+
+      padding: 1.5rem;
+      background: #282c35;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px black;
+      max-width: 320px;
+      text-align: center;
+    }
+  }
 }
