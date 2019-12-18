@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './share.scss';
+import { Animated } from 'react-animated-css';
 import share from '../../images/share.svg';
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
@@ -58,7 +59,17 @@ const Share = () => {
         Share
         <img className="share-button" src={share} alt="share button" />
       </div>
-      {showModal && renderModal()}
+      { showModal && (
+        <div className="curtain" />
+      )}
+      <Animated
+        animationIn="flipInX"
+        animationOut="flipOutY"
+        animationInDuration={1000}
+        isVisible={showModal}
+      >
+        {renderModal()}
+      </Animated>
     </div>
   );
 };
