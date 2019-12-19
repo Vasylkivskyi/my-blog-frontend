@@ -13,10 +13,20 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
   const { post } = params;
 
-  const [postState, setPostState] = useState({});
+  const [postState, setPostState] = useState({
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor hic
+    sequi quidem. Sapiente rem accusamus ad modi aperiam in ipsum, animi,
+    unde porro beatae quas iusto mollitia inventore quo nisi cum! Sint
+    perspiciatis delectus deserunt aspernatur inventore recusandae sunt,
+    vitae atque nisi cum ea quisquam explicabo quos exercitationem fugiat
+    nobis saepe, possimus impedit veniam. Laborum odio consectetur
+    reprehenderit blanditiis nostrum Lorem ipsum dolor sit.`,
+  });
+
+  const { text } = postState;
 
   useEffect(() => {
-    console.log('test');
+    // console.log('test');
   }, []);
 
   return (

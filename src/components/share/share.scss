@@ -17,6 +17,10 @@
     &:hover {
       border: none;
     }
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   .animated {
@@ -46,6 +50,10 @@
     .share-window {
       position: relative;
       z-index: 2;
+
+      h3 {
+        color: white;
+      }
 
       .close {
         position: absolute;

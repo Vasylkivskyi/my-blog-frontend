@@ -17,7 +17,6 @@ const Footer = () => {
       // eslint-disable-next-line no-undef
       const data = await fetch('http://quotes.rest/qod.json');
       const quotData = await data.json();
-      console.log(quotData.contents.quotes[0]);
       setQuote({
         text: quotData.contents.quotes[0].quote,
         author: quotData.contents.quotes[0].author,
@@ -31,8 +30,6 @@ const Footer = () => {
   useEffect(() => {
     getQuoteOfTheDay();
   }, []);
-
-  console.log(quote);
 
   return (
     <footer className="footer">
