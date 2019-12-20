@@ -68,6 +68,10 @@ body {
     color: white;
     border: 1px solid #e60afc;
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 code {
