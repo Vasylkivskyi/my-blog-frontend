@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './share.scss';
-import { Link, withRouter } from 'react-router-dom';
-import { Animated } from 'react-animated-css';
+import { withRouter } from 'react-router-dom';
 import share from '../../images/share.svg';
 import facebook from '../../images/facebook.svg';
 import twitter from '../../images/twitter.svg';
@@ -34,40 +33,44 @@ const Share: React.FC<WithRouterInterface> = (props) => {
   const facebookLink = `https://www.facebook.com/sharer.php?u=${url}`;
   const twitterLink = encodeURI(`https://twitter.com/intent/tweet?url=${url}&text=${description}`);
 
+  const show = showModal ? 'show' : '';
+
   const renderModal = () => (
-    <Animated
-      animationIn="flipInX"
-      animationOut="flipOutY"
-      animationInDuration={1000}
-      isVisible={showModal}
-    >
-      <div className="modal">
-        <div className="share-window">
-          <img
-            className="close remove-outline"
-            src={close}
-            alt="close icon"
-            onClick={() => modalToggle()}
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-            role="button"
-            tabIndex={0}
-          />
-          <h3>{description}</h3>
+    <div className={`modal ${show}`}>
+      <div className="share-window">
+        <img
+          className="close remove-outline"
+          src={close}
+          alt="close icon"
+          onClick={() => modalToggle()}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+          role="button"
+          tabIndex={0}
+        />
+        <h3>{description}</h3>
       Share this via
-          <div className="share-icons">
-            <a className="social-links" href={twitterLink}>
-              <img className="social" src={twitter} alt="twitter icon" />
-            </a>
-            <a
-              className="social-links"
-              href={facebookLink}
-            >
-              <img className="social" src={facebook} alt="facebook icon" />
-            </a>
-          </div>
+        <div className="share-icons">
+          <a className="social-links" href={twitterLink}>
+            <img className="social" src={twitter} alt="twitter icon" />
+          </a>
+          <a
+            className="social-links"
+            href={facebookLink}
+          >
+            <img className="social" src={facebook} alt="facebook icon" />
+          </a>
         </div>
       </div>
-    </Animated>
+      { showModal && (
+        // eslint-disable-next-line jsx-a11y/control-has-associated-label
+        <div
+          className="curtain"
+          onClick={modalToggle}
+          role="button"
+          tabIndex={0}
+        />
+      )}
+    </div>
   );
 
   return (
@@ -81,11 +84,8 @@ const Share: React.FC<WithRouterInterface> = (props) => {
         Share
         <img className="share-button" src={share} alt="share button" />
       </div>
-      { showModal && (
-        <div className="curtain" />
-      )}
 
-      {renderModal()}
+      { renderModal()}
 
     </div>
   );

@@ -23,14 +23,6 @@
     }
   }
 
-  .animated {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
   .curtain {
     position: fixed;
     background: rgba(silver, 0.3);
@@ -38,18 +30,25 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 100;
   }
 
   .modal {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 100%;
     z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
 
     .share-window {
       position: relative;
-      z-index: 2;
+      z-index: 200;
 
       h3 {
         color: white;
@@ -69,6 +68,10 @@
       box-shadow: 1px 1px 5px black;
       max-width: 320px;
       text-align: center;
+    }
+
+    &.show {
+      display: flex;
     }
   }
 }
