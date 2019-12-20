@@ -8,6 +8,7 @@ import Info from '../../components/info/Info';
 import CommentsList from '../commentsList/CommentsList';
 import comments from '../../commentsMoct';
 import PostInfo from '../../components/postInfo/PostInfo';
+import NewComment from '../../components/newComment/NewComment';
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
@@ -100,6 +101,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
         </Link>
       </div>
       <CommentsList postTitle={deslugify(post)} comments={comments} />
+      <NewComment postId={1} />
       <div className="info-container">
         <Info />
       </div>

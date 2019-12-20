@@ -17,8 +17,6 @@ const Share: React.FC<WithRouterInterface> = (props) => {
     showModal: false,
   });
 
-  console.log(props);
-
   const { location } = props;
 
   const { showModal } = compState;
@@ -37,33 +35,39 @@ const Share: React.FC<WithRouterInterface> = (props) => {
   const twitterLink = encodeURI(`https://twitter.com/intent/tweet?url=${url}&text=${description}`);
 
   const renderModal = () => (
-    <div className="modal">
-      <div className="share-window">
-        <img
-          className="close remove-outline"
-          src={close}
-          alt="close icon"
-          onClick={() => modalToggle()}
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-          role="button"
-          tabIndex={0}
-        />
-        <h3>{description}</h3>
+    <Animated
+      animationIn="flipInX"
+      animationOut="flipOutY"
+      animationInDuration={1000}
+      isVisible={showModal}
+    >
+      <div className="modal">
+        <div className="share-window">
+          <img
+            className="close remove-outline"
+            src={close}
+            alt="close icon"
+            onClick={() => modalToggle()}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+            role="button"
+            tabIndex={0}
+          />
+          <h3>{description}</h3>
       Share this via
-        <div className="share-icons">
-          <a className="social-links" href={twitterLink}>
-            <img className="social" src={twitter} alt="twitter icon" />
-          </a>
-          <a
-            className="social-links"
-            href={facebookLink}
-          >
-            <img className="social" src={facebook} alt="facebook icon" />
-          </a>
+          <div className="share-icons">
+            <a className="social-links" href={twitterLink}>
+              <img className="social" src={twitter} alt="twitter icon" />
+            </a>
+            <a
+              className="social-links"
+              href={facebookLink}
+            >
+              <img className="social" src={facebook} alt="facebook icon" />
+            </a>
+          </div>
         </div>
-
       </div>
-    </div>
+    </Animated>
   );
 
   return (
@@ -80,14 +84,9 @@ const Share: React.FC<WithRouterInterface> = (props) => {
       { showModal && (
         <div className="curtain" />
       )}
-      <Animated
-        animationIn="flipInX"
-        animationOut="flipOutY"
-        animationInDuration={1000}
-        isVisible={showModal}
-      >
-        {renderModal()}
-      </Animated>
+
+      {renderModal()}
+
     </div>
   );
 };

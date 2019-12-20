@@ -1,0 +1,34 @@
+.new-comment {
+  margin-top: 3rem;
+  width: 100%;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .login-info {
+    font-size: 14px;
+    .user-name {
+      color: #e60afc;
+      font-weight: bold;
+    }
+  }
+
+  .text-area {
+    width: 100%;
+    background: #282c35;
+    border: 1px solid #e60afc;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 18px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    min-height: 100px;
+    overflow: hidden;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
