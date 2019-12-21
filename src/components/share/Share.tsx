@@ -11,19 +11,32 @@ import { deslugify } from '../../Utils/RoutesHelper';
 
 import { WithRouterInterface } from '../../interfaces/interfaces';
 
-const Share: React.FC<WithRouterInterface> = (props) => {
+const Share: React.FC<WithRouterInterface> = ({ location }) => {
   const [compState, setCompState] = useState({
-    showModal: false,
+    show: false,
   });
 
-  const { location } = props;
+  const { show } = compState;
 
-  const { showModal } = compState;
+  const showModal = () => {
+    const modal = document.getElementById('modal');
+    setCompState({ show: true });
+    if (modal) {
+      modal.classList.remove('hide');
 
-  const modalToggle = () => {
-    setCompState({
-      showModal: !showModal,
-    });
+      modal.classList.add('show');
+    }
+    console.log(modal?.classList, 'show');
+  };
+
+  const hideModal = () => {
+    const modal = document.getElementById('modal');
+    setCompState({ show: false });
+    if (modal) {
+      modal.classList.remove('show');
+      modal.classList.add('hide');
+    }
+    console.log(modal);
   };
 
   const url = `${URL}${location.pathname}`;
@@ -33,16 +46,15 @@ const Share: React.FC<WithRouterInterface> = (props) => {
   const facebookLink = `https://www.facebook.com/sharer.php?u=${url}`;
   const twitterLink = encodeURI(`https://twitter.com/intent/tweet?url=${url}&text=${description}`);
 
-  const show = showModal ? 'show' : '';
 
   const renderModal = () => (
-    <div className={`modal ${show}`}>
+    <div className="modal" id="modal">
       <div className="share-window">
         <img
           className="close remove-outline"
           src={close}
           alt="close icon"
-          onClick={() => modalToggle()}
+          onClick={() => hideModal()}
           // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
           role="button"
           tabIndex={0}
@@ -61,11 +73,11 @@ const Share: React.FC<WithRouterInterface> = (props) => {
           </a>
         </div>
       </div>
-      { showModal && (
+      { show && (
         // eslint-disable-next-line jsx-a11y/control-has-associated-label
         <div
           className="curtain"
-          onClick={modalToggle}
+          onClick={hideModal}
           role="button"
           tabIndex={0}
         />
@@ -77,7 +89,7 @@ const Share: React.FC<WithRouterInterface> = (props) => {
     <div className="share-container remove-outline">
       <div
         className="border"
-        onClick={() => modalToggle()}
+        onClick={() => showModal()}
         role="button"
         tabIndex={0}
       >
