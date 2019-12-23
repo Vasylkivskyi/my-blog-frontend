@@ -26,7 +26,6 @@ const Share: React.FC<WithRouterInterface> = ({ location }) => {
 
       modal.classList.add('show');
     }
-    console.log(modal?.classList, 'show');
   };
 
   const hideModal = () => {
@@ -36,7 +35,6 @@ const Share: React.FC<WithRouterInterface> = ({ location }) => {
       modal.classList.remove('show');
       modal.classList.add('hide');
     }
-    console.log(modal);
   };
 
   const url = `${URL}${location.pathname}`;

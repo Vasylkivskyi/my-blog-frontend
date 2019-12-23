@@ -12,7 +12,7 @@ const Info: React.FC<WithRouterInterface> = ({ location }) => (
     <figure className="info">
       <img className="image" src={homepage} alt="Pavlo" />
       <figcaption className="info-text">
-        <p>
+        <p className="top-p">
               Personal blog by
           {' '}
           <a href="https://twitter.com/PVasylkivskyi">Pavlo Vasylkivskyi</a>
