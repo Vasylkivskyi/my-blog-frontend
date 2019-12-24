@@ -8,32 +8,9 @@
   position: fixed;
   top: 0;
   right: 0;
-  left: -10000px;
+  left: 0;
   bottom: 0;
   z-index: 100;
-  animation: fadeOut 1s;
-
-  @keyframes fadeOut {
-    0% {
-      background: rgba(silver, 0.3);
-      left: 0;
-    }
-    20% {
-      background: rgba(silver, 0);
-      left: 0;
-    }
-    40% {
-      background: rgba(silver, 0);
-      left: 200px;
-    }
-    50% {
-      background: rgba(silver, 0);
-      left: 0px;
-    }
-    100% {
-      background: none;
-    }
-  }
 
   .content-window {
     position: relative;
@@ -62,30 +39,6 @@
     right: 0;
     left: 0px;
     bottom: 0;
-  }
-
-  &.show {
-    display: flex;
-    animation: fadeIn 1s;
     background: rgba(silver, 0.3);
-    left: 0px;
-
-    @keyframes fadeIn {
-      0% {
-        background: none;
-        left: -1000px;
-      }
-      40% {
-        background: none;
-        left: 200px;
-      }
-      50% {
-        background: rgba(silver, 0);
-        left: 0px;
-      }
-      100% {
-        background: rgba(silver, 0.3);
-      }
-    }
   }
 }
