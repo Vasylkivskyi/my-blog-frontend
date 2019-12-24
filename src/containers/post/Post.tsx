@@ -9,6 +9,7 @@ import CommentsList from '../commentsList/CommentsList';
 import comments from '../../commentsMoct';
 import PostInfo from '../../components/postInfo/PostInfo';
 import NewComment from '../../components/newComment/NewComment';
+import Login from '../login/Login';
 
 const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   const { params } = match;
@@ -25,6 +26,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
   });
 
   const { text } = postState;
+  const loggedIn = false;
 
   useEffect(() => {
     // console.log('test');
@@ -101,7 +103,7 @@ const Post: React.FC<MatchIncludedInterface> = ({ match }) => {
         </Link>
       </div>
       <CommentsList postTitle={deslugify(post)} comments={comments} />
-      <NewComment postId={1} />
+      {loggedIn ? (<NewComment postId={1} />) : <Login />}
       <div className="info-container">
         <Info />
       </div>
