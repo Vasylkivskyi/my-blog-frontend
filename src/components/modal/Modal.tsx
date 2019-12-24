@@ -1,44 +1,45 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import close from '../../images/close.svg';
-import { WithRouterInterface } from '../../interfaces/interfaces';
+import './modal.scss';
+
+interface ModalInterface {
+  isShoving: boolean;
+  toggleModal: Function;
+}
 
 
-const Modal: React.FC<WithRouterInterface> = (props) => {
-  const [compState, setCompState] = useState({
-    show: false,
-  });
+const Modal: React.FC<ModalInterface> = (props) => {
+  const { children, isShoving, toggleModal } = props;
 
-  const { children } = props;
-  const { show } = compState;
+  useEffect(() => {
+    console.log('works');
+  }, [isShoving]);
 
-  const showModal = () => {
-    const modal = document.getElementById('modal');
-    setCompState({ show: true });
-    if (modal) {
-      modal.classList.remove('hide');
+  useEffect(() => {
+    console.log('gggg');
+  }, []);
 
-      modal.classList.add('show');
-    }
-  };
+  const classCss = isShoving ? 'show' : '';
 
-  const hideModal = () => {
-    const modal = document.getElementById('modal');
-    setCompState({ show: false });
-    if (modal) {
-      modal.classList.remove('show');
-      modal.classList.add('hide');
-    }
-  };
-  console.log();
   return (
-    <div className="modal" id="modal">
-      {children}
-      { show && (
+    <div className={`modal ${classCss}`}>
+      <div className="content-window">
+        <img
+          className="close remove-outline"
+          src={close}
+          alt="close icon"
+          onClick={() => toggleModal()}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+          role="button"
+          tabIndex={0}
+        />
+        {children}
+      </div>
+      { isShoving && (
         // eslint-disable-next-line jsx-a11y/control-has-associated-label
         <div
           className="curtain"
-          onClick={hideModal}
+          onClick={() => toggleModal()}
           role="button"
           tabIndex={0}
         />
@@ -47,4 +48,4 @@ const Modal: React.FC<WithRouterInterface> = (props) => {
   );
 };
 
-export default withRouter(Modal);
+export default Modal;
