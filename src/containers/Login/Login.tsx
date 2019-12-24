@@ -5,12 +5,12 @@ import Modal from '../../components/modal/Modal';
 const Login = () => {
   console.log('hello');
   return (
-    <div className="login-container">
-      To live a comment you have to
+    <div className="login">
+      To leave a comment please
       {' '}
       <span className="login-button">login</span>
-      <Modal isShoving toggleModal={() => console.log('hello')}>
-        <div className="login-container">
+      <Modal isShoving={false} toggleModal={() => console.log('hello')}>
+        <div className="login-modal">
           <div className="login-card">
         hello
           </div>

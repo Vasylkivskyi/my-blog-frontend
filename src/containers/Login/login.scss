@@ -1,2 +1,20 @@
-.login-container {
+.login {
+  border: 1px solid #e60afc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+
+  .login-button {
+    color: #e60afc;
+    border-bottom: 1px solid #e60afc;
+
+    &:hover {
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .login-modal {
+    max-width: 400px;
+  }
 }
