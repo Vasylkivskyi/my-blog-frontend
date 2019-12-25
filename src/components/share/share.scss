@@ -26,9 +26,28 @@
   .share-window {
     h3 {
       color: white;
+      font-size: 28px;
     }
 
     max-width: 320px;
     text-align: center;
+
+    .share-icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      .facebook {
+        margin-right: 10px;
+      }
+      .social {
+        font-size: 35px;
+        margin-top: 20px;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
 }

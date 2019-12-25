@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './share.scss';
 import { withRouter } from 'react-router-dom';
+import { FaTwitter, FaFacebook } from 'react-icons/fa';
 import share from '../../images/share.svg';
-import facebook from '../../images/facebook.svg';
-import twitter from '../../images/twitter.svg';
 import { URL } from '../../constants/routes';
 import { deslugify } from '../../Utils/RoutesHelper';
 import Modal from '../modal/Modal';
@@ -36,13 +35,13 @@ const Share: React.FC<WithRouterInterface> = ({ location }) => {
       Share this via
       <div className="share-icons">
         <a className="social-links" href={twitterLink}>
-          <img className="social" src={twitter} alt="twitter icon" />
+          <FaTwitter className="social facebook" />
         </a>
         <a
           className="social-links"
           href={facebookLink}
         >
-          <img className="social" src={facebook} alt="facebook icon" />
+          <FaFacebook className="social" />
         </a>
       </div>
     </div>

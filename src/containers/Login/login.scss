@@ -1,7 +1,7 @@
 .login {
   border: 1px solid #e60afc;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   margin-top: 2rem;
 
   .login-button {
@@ -15,6 +15,11 @@
   }
 
   .login-modal {
-    max-width: 400px;
+    .login-card {
+      .login-header {
+        font-size: 28px;
+        color: white;
+      }
+    }
   }
 }

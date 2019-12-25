@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './footer.scss';
-import facebook from '../../images/facebook.svg';
-import twitter from '../../images/twitter.svg';
+import { FaTwitter, FaFacebook } from 'react-icons/fa';
+
 
 const Footer = () => {
   const [quote, setQuote] = useState({
@@ -47,13 +47,13 @@ const Footer = () => {
       <div className="social-container">
         Follow Me
         <a className="social-links" href="https://twitter.com/PVasylkivskyi">
-          <img className="social" src={twitter} alt="twitter icon" />
+          <FaTwitter className="social" />
         </a>
         <a
           className="social-links"
           href="https://www.facebook.com/pasha.vasylkivskiy"
         >
-          <img className="social" src={facebook} alt="facebook icon" />
+          <FaFacebook className="social" />
         </a>
       </div>
       <div className="date">{year}</div>
