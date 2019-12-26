@@ -18,7 +18,7 @@ To leave a comment please
     <Link to="/register">
       <span className="login-button">Register</span>
     </Link>
-    <Modal isShoving={false} toggleModal={() => console.log('hello')}>
+    <Modal isShoving toggleModal={() => console.log('hello')}>
       <div className="login-modal">
         <div className="login-card">
           <h3 className="login-header">Log in and leave a comment</h3>
@@ -30,6 +30,11 @@ Log In with Google
             <FaFacebook className="icon" />
 Log In with Facebook
           </div>
+          Don&apos;t have an account?
+          {' '}
+          <Link to="/register">
+            <span className="login-button">Register</span>
+          </Link>
         </div>
       </div>
     </Modal>

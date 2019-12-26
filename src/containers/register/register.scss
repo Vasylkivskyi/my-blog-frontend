@@ -1,0 +1,30 @@
+.register-container {
+  .register-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .register-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .social {
+        margin-left: 10px;
+        font-size: 25px;
+      }
+    }
+  }
+  .create-title {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .submit-button {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
