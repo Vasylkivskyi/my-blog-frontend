@@ -14,7 +14,7 @@ const Input: React.FC<InputInterface> = ({ inputType }) => {
         <input
           type={inputType}
           className="input-field remove-outline"
-          placeholder={inputType === 'email' ? 'example@coolmail.com' : ''}
+          placeholder={inputType === 'email' ? 'example@coolmail.com' : 'password'}
           name="email"
         />
       </label>
