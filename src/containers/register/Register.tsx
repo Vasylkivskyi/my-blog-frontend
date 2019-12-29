@@ -8,6 +8,8 @@ import Input from '../../components/inputComponent/Input';
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Must be a valid email address!')
     .required('Must enter an email!'),
+  password: Yup.string().min(6, 'Password must be longer than 6 characters'),
+
 });
 
 const Register: React.FC = () => (
@@ -15,11 +17,11 @@ const Register: React.FC = () => (
     <h1>Registration</h1>
     <div className="register-card">
       <button type="button" className="btn register-btn">
-Enter via your Google account
+Enter with Google account
         <span className="social"><FaGoogle /></span>
       </button>
       <button type="button" className="btn register-btn">
-Enter via your Facebook account
+Enter with Facebook account
         <span className="social"><FaFacebook /></span>
       </button>
     </div>
@@ -31,25 +33,31 @@ Enter via your Facebook account
     >
       {({
         values, errors, touched, handleChange, handleBlur,
-      }) => {
-        console.log(errors);
-        return (
-          <form>
-            <Input
-              inputType="email"
-              handleChange={handleChange}
-              name="email"
-              id="email"
-              value={values.email}
-              handleBlur={handleBlur}
-              errorClassName={touched.email && errors.email ? 'has-error' : ''}
-              errors={errors}
-            />
-            {/* <Input inputType="password" /> */}
-            <button className="btn submit-button" type="submit">Submit</button>
-          </form>
-        );
-      }}
+      }) => (
+        <form>
+          <Input
+            inputType="email"
+            handleChange={handleChange}
+            name="email"
+            id="email"
+            value={values.email}
+            handleBlur={handleBlur}
+            errorClassName={touched.email && errors.email ? 'has-error' : ''}
+            emailErrors={touched.email && errors.email}
+          />
+          <Input
+            inputType="password"
+            handleChange={handleChange}
+            name="password"
+            id="password"
+            value={values.password}
+            handleBlur={handleBlur}
+            errorClassName={touched.password && errors.password ? 'has-error' : ''}
+            passwordErrors={touched.password && errors.password}
+          />
+          <button className="btn submit-button" type="submit">Submit</button>
+        </form>
+      )}
     </Formik>
   </div>
 );

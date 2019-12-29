@@ -9,38 +9,32 @@ interface InputInterface {
   value: string;
   handleBlur: Function;
   errorClassName?: string;
-  errors: any;
+  emailErrors?: any;
+  passwordErrors?: any;
 }
 
 
 const Input: React.FC<InputInterface> = ({
-  inputType, handleChange, name, id, value, handleBlur, errorClassName, errors,
-}) => {
-  const validateEmail = (email: string) => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  };
-
-  return (
-    <div className="input-container">
-      <label htmlFor="email" className="label">
-        {inputType === 'email' ? 'Enter your email address' : 'Enter password'}
-        <input
-          type={inputType}
-          className={`input-field remove-outline ${errorClassName}`}
-          placeholder={inputType === 'email' ? 'example@coolmail.com' : 'password'}
-          name={name}
-          value={value}
-          id={id}
-          onBlur={(e) => handleBlur(e)}
-          onChange={(e) => handleChange(e)}
-        />
-      </label>
-      <div className="error">
-        {errors.email }
-      </div>
+  inputType, handleChange, name, id, value, handleBlur, errorClassName, emailErrors, passwordErrors,
+}) => (
+  <div className="input-container">
+    <label htmlFor="email" className="label">
+      {inputType === 'email' ? 'Enter your email address' : 'Enter password'}
+      <input
+        type={inputType}
+        className={`input-field remove-outline ${errorClassName}`}
+        placeholder={inputType === 'email' ? 'example@coolmail.com' : 'password'}
+        name={name}
+        value={value}
+        id={id}
+        onBlur={(e) => handleBlur(e)}
+        onChange={(e) => handleChange(e)}
+      />
+    </label>
+    <div className="error">
+      {inputType === 'email' ? emailErrors : passwordErrors }
     </div>
-  );
-};
+  </div>
+);
 
 export default Input;
