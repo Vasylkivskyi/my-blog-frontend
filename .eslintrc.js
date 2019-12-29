@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'consistent-return': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   'globals': {
     'window': true,
