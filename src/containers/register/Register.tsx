@@ -28,13 +28,22 @@ Enter with Facebook account
     <h2 className="create-title">Create new account</h2>
     <Formik
       initialValues={{ email: '', password: '' }}
-      onSubmit={() => console.log('😍')}
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        console.log('😍');
+        setSubmitting(true);
+      }}
       validationSchema={validationSchema}
     >
       {({
-        values, errors, touched, handleChange, handleBlur,
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
       }) => (
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
             inputType="email"
             handleChange={handleChange}
@@ -55,7 +64,7 @@ Enter with Facebook account
             errorClassName={touched.password && errors.password ? 'has-error' : ''}
             passwordErrors={touched.password && errors.password}
           />
-          <button className="btn submit-button" type="submit">Submit</button>
+          <button className="btn submit-button" type="submit" disabled={isSubmitting}>Submit</button>
         </form>
       )}
     </Formik>
