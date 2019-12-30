@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .register-container {
   .register-card {
     display: flex;
@@ -16,7 +18,7 @@
     }
   }
   .create-title {
-    color: white;
+    color: $white;
     text-align: center;
     font-size: 24px;
     margin-top: 2rem;
@@ -29,12 +31,12 @@
     margin-top: 2rem;
 
     &:disabled {
-      border: 1px solid silver;
-      color: silver;
+      border: 1px solid $silver;
+      color: $silver;
 
       &:hover {
-        color: silver;
-        background: #282c35;
+        color: $silver;
+        background: $background;
       }
     }
   }

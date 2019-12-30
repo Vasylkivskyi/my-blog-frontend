@@ -1,3 +1,6 @@
+@import '../../styles/breakpoints';
+@import '../../styles/colors';
+
 .new-comment {
   margin-top: 3rem;
   max-width: 100%;
@@ -9,18 +12,18 @@
   .login-info {
     font-size: 14px;
     .user-name {
-      color: #e60afc;
+      color: $violet;
       font-weight: bold;
     }
   }
 
   .text-area {
     width: 100%;
-    background: #282c35;
-    border: 1px solid #e60afc;
+    background: $background;
+    border: 1px solid $violet;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: white;
+    color: $white;
     font-size: 18px;
     padding: 0.5rem;
     border-radius: 5px;

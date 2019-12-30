@@ -1,4 +1,5 @@
 @import '../../styles/_breakpoints';
+@import '../../styles/colors';
 
 .modal {
   display: flex;
@@ -35,22 +36,22 @@
       top: -15px;
       width: 30px;
       height: 30px;
-      text-shadow: 1px 1px 5px black;
-      color: #e60afc;
-      background-color: #282c35;
+      text-shadow: 1px 1px 5px $black;
+      color: $violet;
+      background-color: $background;
       border-radius: 50%;
       padding: 3px;
-      box-shadow: 1px 1px 5px black;
+      box-shadow: 1px 1px 5px $black;
 
       &:hover {
-        color: white;
+        color: $white;
       }
     }
 
     padding: 1.5rem;
-    background: #282c35;
+    background: $background;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 5px $black;
     text-align: center;
   }
 
@@ -60,6 +61,6 @@
     right: 0;
     left: 0px;
     bottom: 0;
-    background: rgba(silver, 0.3);
+    background: rgba($silver, 0.3);
   }
 }

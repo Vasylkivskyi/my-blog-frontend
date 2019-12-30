@@ -1,17 +1,19 @@
+@import '../../styles/breakpoints';
+@import '../../styles/colors';
+
 .share-container {
   margin-top: 0.5rem;
   align-items: center;
-  color: #e60afc;
+  color: $violet;
 
   .border {
-    border-bottom: 1px solid #e60afc;
+    border-bottom: 1px solid $violet;
     cursor: pointer;
     display: flex;
     align-items: center;
 
     .share-button {
-      width: 24px;
-      margin-top: 2px;
+      font-size: 28px;
     }
 
     &:hover {
@@ -25,7 +27,7 @@
 
   .share-window {
     h3 {
-      color: white;
+      color: $white;
       font-size: 28px;
     }
 
@@ -45,7 +47,7 @@
         margin-top: 20px;
 
         &:hover {
-          color: white;
+          color: $white;
         }
       }
     }

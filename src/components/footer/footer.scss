@@ -1,8 +1,11 @@
+@import '../../styles/_breakpoints';
+@import '../../styles/_colors';
+
 .footer {
   width: 100%;
   margin-top: 50px;
   padding-bottom: 20px;
-  border-top: 1px solid #e60afc;
+  border-top: 1px solid $violet;
   padding-top: 1.7rem;
 
   .quote-container {
@@ -13,7 +16,7 @@
       padding-bottom: 0.7rem;
       font-style: italic;
       font-size: 14px;
-      color: #e60afc;
+      color: $violet;
     }
     .author {
       font-style: normal;
@@ -38,14 +41,14 @@
         margin-right: 5px;
 
         &:hover {
-          color: white;
+          color: $white;
         }
       }
     }
   }
   .date {
     text-align: center;
-    color: #e60afc;
+    color: $violet;
     margin-top: 5px;
   }
 }

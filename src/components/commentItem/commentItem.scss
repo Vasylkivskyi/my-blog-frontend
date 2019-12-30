@@ -1,3 +1,6 @@
+@import '../../styles/_breakpoints';
+@import '../../styles/_colors';
+
 .comment-container {
   width: 100%;
   margin-top: 2rem;
@@ -17,7 +20,7 @@
       margin-left: 10px;
 
       h4 {
-        color: white;
+        color: $white;
         margin: 0px;
         margin-bottom: 5px;
       }
@@ -30,7 +33,7 @@
 
   .text {
     margin-top: 0.5rem;
-    color: white;
+    color: $white;
     font-style: italic;
     font-weight: 400;
     padding-left: 1rem;

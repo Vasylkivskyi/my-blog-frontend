@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './share.scss';
 import { withRouter } from 'react-router-dom';
 import { FaTwitter, FaFacebook } from 'react-icons/fa';
-import share from '../../images/share.svg';
+import { IoMdShareAlt } from 'react-icons/io';
 import { URL } from '../../constants/routes';
 import { deslugify } from '../../Utils/RoutesHelper';
 import Modal from '../modal/Modal';
@@ -56,7 +56,7 @@ const Share: React.FC<WithRouterInterface> = ({ location }) => {
         tabIndex={0}
       >
         Share
-        <img className="share-button" src={share} alt="share button" />
+        <IoMdShareAlt className="share-button" />
       </div>
       <Modal isShoving={show} toggleModal={toggleModal}>
         { renderModalContent()}

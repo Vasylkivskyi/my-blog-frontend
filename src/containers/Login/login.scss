@@ -1,12 +1,15 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+
 .login {
-  border: 1px solid #e60afc;
+  border: 1px solid $violet;
   border-radius: 5px;
   padding: 1rem;
   margin-top: 2rem;
 
   .login-button {
-    color: #e60afc;
-    border-bottom: 1px solid #e60afc;
+    color: $violet;
+    border-bottom: 1px solid $violet;
 
     &:hover {
       border: none;
@@ -18,7 +21,7 @@
     .login-card {
       .login-header {
         font-size: 28px;
-        color: white;
+        color: $white;
       }
     }
   }

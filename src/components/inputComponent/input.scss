@@ -1,24 +1,27 @@
+@import '../../styles/_breakpoints';
+@import '../../styles/colors';
+
 .input-container {
   margin-bottom: 1rem;
 
   .input-field {
     width: 100%;
-    background: #282c35;
-    border: 1px solid #e60afc;
+    background: $background;
+    border: 1px solid $violet;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     font-size: 18px;
-    color: #e60afc;
+    color: $violet;
     font-weight: 600;
 
     &.has-error {
-      color: red;
+      color: $red;
       font-weight: 600;
     }
   }
 
   .error {
-    color: red;
+    color: $red;
     font-size: 14px;
     width: 100%;
     padding: 0.1rem 0rem;

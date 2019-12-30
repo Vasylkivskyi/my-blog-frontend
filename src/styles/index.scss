@@ -1,10 +1,11 @@
+@import '_colors';
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300|Montserrat:400,700,900&display=swap');
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #282c35;
+  background: $background;
   margin: 0;
   padding: 0;
   font-family: 'Merriweather', Georgia, serif;
@@ -15,7 +16,7 @@ body {
 
   h1 {
     font-size: 2.2em;
-    color: white;
+    color: $white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
   }
@@ -35,14 +36,14 @@ body {
   h5,
   h6 {
     font-family: 'Montserrat', sans-serif;
-    color: #e60afc;
+    color: $violet;
     font-weight: 900;
   }
 
   a {
-    color: #e60afc;
+    color: $violet;
     text-decoration: none;
-    border-bottom: 1px solid #e60afc;
+    border-bottom: 1px solid $violet;
 
     &:hover {
       border-bottom: none;
@@ -58,16 +59,16 @@ body {
 
 .btn {
   padding: 0.5rem 1rem;
-  background: #e60afc;
+  background: $violet;
   font-size: 18px;
   font-weight: 900;
   border-radius: 5px;
-  background: #282c35;
-  color: #e60afc;
+  background: $background;
+  color: $violet;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #e60afc;
+  border: 1px solid $violet;
   margin-bottom: 1rem;
 
   .icon {
@@ -76,9 +77,9 @@ body {
   }
 
   &:hover {
-    background: #e60afc;
-    color: white;
-    border: 1px solid #e60afc;
+    background: $violet;
+    color: $white;
+    border: 1px solid $violet;
   }
 
   &:focus {
