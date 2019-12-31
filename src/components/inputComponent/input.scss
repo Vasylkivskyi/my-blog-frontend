@@ -5,19 +5,32 @@
   margin-bottom: 1rem;
   text-align: left;
 
-  .input-field {
-    width: 100%;
-    background: $background;
-    border: 1px solid $violet;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 18px;
-    color: $violet;
-    font-weight: 600;
+  .label {
+    position: relative;
 
-    &.has-error {
-      color: $red;
+    .input-icon {
+      position: absolute;
+      left: 12px;
+      top: 28px;
+      color: $violet;
+      font-size: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      background: $background;
+      border: 1px solid $violet;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      padding-left: 40px;
+      font-size: 18px;
+      color: $violet;
       font-weight: 600;
+
+      &.has-error {
+        color: $red;
+        font-weight: 600;
+      }
     }
   }
 

@@ -5,9 +5,10 @@ import Input from '../inputComponent/Input';
 import './authForm.scss';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Must be a valid email address!')
+  email: Yup.string().email('Please enter a valid email address!')
     .required('Must enter an email!'),
-  password: Yup.string().min(6, 'Password must be longer than 6 characters'),
+  password: Yup.string().min(6, 'Password must be longer than 6 characters')
+    .required('Please enter password!'),
 
 });
 

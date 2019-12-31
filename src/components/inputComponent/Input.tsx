@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './input.scss';
+import { AiFillLock, AiFillMail } from 'react-icons/ai';
+
 
 interface InputInterface {
   inputType: string;
@@ -30,6 +32,7 @@ const Input: React.FC<InputInterface> = ({
         onBlur={(e) => handleBlur(e)}
         onChange={(e) => handleChange(e)}
       />
+      <span className="input-icon">{inputType === 'email' ? <AiFillMail /> : <AiFillLock />}</span>
     </label>
     <div className="error">
       {inputType === 'email' ? emailErrors : passwordErrors }
