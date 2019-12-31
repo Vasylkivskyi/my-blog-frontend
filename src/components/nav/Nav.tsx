@@ -14,7 +14,8 @@ const Nav: React.FC<WithRouterInterface> = ({ location }) => {
         <Link to="/">
           <h1 className="site-name">Inside the flow</h1>
         </Link>
-        {location.pathname !== '/register' && <Share />}
+        {!(location.pathname !== '/register'
+        || location.pathname !== '/admin') && <Share />}
       </div>
       {location.pathname.length === 1 && <Info />}
     </nav>

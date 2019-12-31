@@ -8,6 +8,7 @@ import PostList from './containers/postsList/PostList';
 import Footer from './components/footer/Footer';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import Register from './containers/register/Register';
+import AdminHomepage from './containers/Admin/adminHomepage/AdminHomepage';
 
 const App: React.FC = () => (
   <Router>
@@ -24,6 +25,7 @@ const App: React.FC = () => (
         <Switch>
           <Route path="/" exact component={PostList} />
           <Route path="/register" exact component={Register} />
+          <Route path="/admin" exact component={AdminHomepage} />
           <Route path="/:post" component={Post} />
         </Switch>
       </ScrollToTop>

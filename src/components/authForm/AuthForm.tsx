@@ -56,7 +56,9 @@ const AuthForm: React.FC<AuthFormInterface> = ({ handleRequest }) => (
             errorClassName={touched.password && errors.password ? 'has-error' : ''}
             passwordErrors={touched.password && errors.password}
           />
-          <button className="btn submit-button" type="submit" disabled={isSubmitting}>Submit</button>
+          <div className="button-container">
+            <button className="btn submit-button" type="submit" disabled={isSubmitting}>Submit</button>
+          </div>
         </form>
       )}
     </Formik>

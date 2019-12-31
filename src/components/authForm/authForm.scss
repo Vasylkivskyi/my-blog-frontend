@@ -1,18 +1,27 @@
 @import '../../styles/_colors';
 
 .auth-form {
-  .submit-button {
+  text-align: center;
+
+  .button-container {
     width: 100%;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
 
-    &:disabled {
-      border: 1px solid $silver;
-      color: $silver;
+    .submit-button {
+      //width: 100%;
+      width: 30%;
+      margin-bottom: 3rem;
+      margin-top: 1rem;
 
-      &:hover {
+      &:disabled {
+        border: 1px solid $silver;
         color: $silver;
-        background: $background;
+
+        &:hover {
+          color: $silver;
+          background: $background;
+        }
       }
     }
   }
