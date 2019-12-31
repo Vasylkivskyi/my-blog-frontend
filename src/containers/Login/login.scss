@@ -19,6 +19,10 @@
 
   .login-modal {
     .login-card {
+      .email-login {
+        color: $white;
+        margin-top: 40px;
+      }
       .login-header {
         font-size: 28px;
         color: $white;

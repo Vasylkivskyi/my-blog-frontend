@@ -8,7 +8,6 @@ import { WithRouterInterface } from '../../interfaces/interfaces';
 
 const Nav: React.FC<WithRouterInterface> = ({ location }) => {
   const cssClass = location.pathname.length > 1 ? 'without-info' : '';
-  console.log(location);
   return (
     <nav className={`navbar ${cssClass}`}>
       <div className="space-between">

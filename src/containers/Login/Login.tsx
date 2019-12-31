@@ -3,6 +3,8 @@ import './login.scss';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
+import AuthForm from '../../components/authForm/AuthForm';
+
 
 const Login: React.FC = () => {
   const [isShowing, setShowing] = React.useState<boolean>(false);
@@ -10,6 +12,11 @@ const Login: React.FC = () => {
     console.log('😈');
     setShowing(!isShowing);
   };
+
+  const handleSubmit = () => {
+    console.log('Here will be the request to DB from login 🤓');
+  };
+
   return (
     <div className="login">
 To leave a comment please
@@ -35,6 +42,8 @@ Log In with Google
               <FaFacebook className="icon" />
 Log In with Facebook
             </div>
+            <h3 className="email-login">Log In with email</h3>
+            <AuthForm handleRequest={handleSubmit} />
           Don&apos;t have an account?
             {' '}
             <Link to="/register">

@@ -1,0 +1,19 @@
+@import '../../styles/_colors';
+
+.auth-form {
+  .submit-button {
+    width: 100%;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+
+    &:disabled {
+      border: 1px solid $silver;
+      color: $silver;
+
+      &:hover {
+        color: $silver;
+        background: $background;
+      }
+    }
+  }
+}
