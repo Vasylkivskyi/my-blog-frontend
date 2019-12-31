@@ -1,7 +1,7 @@
 const posts = [
   {
     id: 1,
-    title: 'Lorem ipsum dolor sit amet.',
+    title: 'Lorem ipsum dolor sit amet',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor placeat quaerat vel facere adipisci, voluptatem deserunt ab optio sunt beatae praesentium alias commodi tenetur nulla ipsum, dicta repellat! Beatae nisi dolores deleniti, error velit tempora quis incidunt laborum minus iure! Voluptas deserunt consequatur aperiam tenetur dignissimos laudantium facere omnis sunt similique. Laborum illum doloremque laudantium dolore veniam et deleniti architecto dolor cupiditate dolorum itaque eligendi distinctio explicabo dolores temporibus blanditiis eaque nostrum, minus praesentium! Hic ad, libero expedita reiciendis, quod fugiat aliquid aut quisquam tempora vitae illum eveniet ducimus in?',
     date: 'December 3, 2018',
   },
