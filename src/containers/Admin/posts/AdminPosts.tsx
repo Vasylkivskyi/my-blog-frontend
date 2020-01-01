@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './adminPosts.scss';
 import { Link } from 'react-router-dom';
-import { AiFillFileText, AiTwotoneCalendar, AiOutlineSearch } from 'react-icons/ai';
+import {
+  AiFillFileText, AiTwotoneCalendar, AiOutlineSearch, AiFillFileAdd,
+} from 'react-icons/ai';
 import posts from '../../../postMock';
 import { slugify } from '../../../Utils/RoutesHelper';
 
@@ -42,7 +44,15 @@ const AdminPosts: React.FC = () => {
 
   return (
     <div className="admin-posts-container">
-      <h1>Posts</h1>
+      <div className="page-title">
+        <h1>Posts</h1>
+        <Link to="/admin/posts/new" className="link">
+          <div className="btn create-post">
+          Create new post
+            <AiFillFileAdd className="icon" />
+          </div>
+        </Link>
+      </div>
       <div className="search">
         <AiOutlineSearch className="icon" />
         <input

@@ -1,6 +1,26 @@
 @import '../../../styles/_colors';
 
 .admin-posts-container {
+  .page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .link {
+      border: none;
+      .create-post {
+        .icon {
+          font-size: 20px;
+          margin-left: 10px;
+          margin-right: 0;
+          margin-bottom: 3px;
+        }
+
+        height: 40px;
+      }
+    }
+  }
+
   .search {
     margin: 3rem 0;
     margin-bottom: 4rem;

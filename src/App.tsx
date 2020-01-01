@@ -10,6 +10,7 @@ import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import Register from './containers/register/Register';
 import AdminHomepage from './containers/Admin/adminHomepage/AdminHomepage';
 import AdminPosts from './containers/Admin/posts/AdminPosts';
+import NewPost from './containers/Admin/newPost/NewPost';
 
 const App: React.FC = () => (
   <Router>
@@ -28,6 +29,7 @@ const App: React.FC = () => (
           <Route path="/register" exact component={Register} />
           <Route path="/admin" exact component={AdminHomepage} />
           <Route path="/admin/posts" exact component={AdminPosts} />
+          <Route path="/admin/posts/new" exact component={NewPost} />
           <Route path="/:post" component={Post} />
         </Switch>
       </ScrollToTop>
