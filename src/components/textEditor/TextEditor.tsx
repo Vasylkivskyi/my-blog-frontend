@@ -13,6 +13,19 @@ const TextEditor = () => {
 
   const onChange = (someState: any) => setEditorState(someState);
 
+  const handleKeyCommand = (command: any) => {
+    const newState = RichUtils.handleKeyCommand(
+      editorState,
+      command,
+    );
+    if (newState) {
+      onChange(newState);
+      return 'handled';
+    }
+    return 'not-handled';
+  };
+
+
   const _onBoldClick = () => {
     onChange(RichUtils.toggleInlineStyle(editorState, 'BOLD'));
   };
@@ -32,7 +45,11 @@ const TextEditor = () => {
         <div className="edit-text-icon" onClick={() => { console.log('hello'); }}><FaLink className="icon" /></div>
       </div>
       <div className="post-text">
-        <Editor editorState={editorState} onChange={onChange} />
+        <Editor
+          editorState={editorState}
+          onChange={onChange}
+          handleKeyCommand={handleKeyCommand}
+        />
       </div>
     </div>
   );
