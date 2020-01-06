@@ -25,7 +25,7 @@ export const Link = (props) => {
   );
 };
 
-const addLinkPluginPlugin = {
+const addLinkPlugin = {
   decorators: [
     {
       strategy: linkStrategy,
@@ -34,4 +34,4 @@ const addLinkPluginPlugin = {
   ],
 };
 
-export default addLinkPluginPlugin;
+export default addLinkPlugin;

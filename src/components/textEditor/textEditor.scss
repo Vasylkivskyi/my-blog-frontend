@@ -28,6 +28,15 @@
         }
       }
     }
+
+    .heading-controls {
+      align-self: center;
+      height: 35px;
+      background: $background;
+      color: $white;
+      border: 1px solid $violet;
+      font-size: 18px;
+    }
   }
   .post-text {
     background: $background;
@@ -38,5 +47,10 @@
     color: $white;
     border: 1px solid $violet;
     border-radius: 5px;
+  }
+
+  .quote {
+    font-size: 30px;
+    color: $violet;
   }
 }

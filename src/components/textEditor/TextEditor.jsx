@@ -1,19 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import {
-  FaBold, FaItalic, FaLink, FaUnderline, FaListUl, FaListOl,
+  FaBold, FaItalic, FaLink, FaUnderline, FaListUl, FaListOl, FaHeading, FaQuoteLeft,
 } from 'react-icons/fa';
 import './textEditor.scss';
 import { EditorState, RichUtils } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
-import addLinkPluginPlugin from './addLinkPlugin';
+import addQuotePlugin from './addQuotePlugin';
+import addLinkPlugin from './addLinkPlugin';
+
 
 const TextEditor = () => {
   const [editorState, setEditorState] = React.useState(
     EditorState.createEmpty(),
   );
 
-  const plugins = [addLinkPluginPlugin];
+  const plugins = [addLinkPlugin, addQuotePlugin];
 
   const onChange = (someState) => setEditorState(someState);
 
@@ -39,6 +41,16 @@ const TextEditor = () => {
   const _onUnderlineClick = () => {
     onChange(RichUtils.toggleInlineStyle(editorState, 'UNDERLINE'));
   };
+  const _onBulletPoints = () => {
+    onChange(RichUtils.toggleBlockType(editorState, 'unordered-list-item'));
+  };
+  const _onOrderedList = () => {
+    onChange(RichUtils.toggleBlockType(editorState, 'ordered-list-item'));
+  };
+  const _onHeading = () => {
+    onChange(RichUtils.toggleBlockType(editorState, 'header-three'));
+  };
+
   const _onAddLink = () => {
     const selection = editorState.getSelection();
     // eslint-disable-next-line no-alert
@@ -57,15 +69,28 @@ const TextEditor = () => {
       contentWithEntity,
       entityKey,
     );
-    onChange(RichUtils.toggleLink(newEditorState, selection, entityKey));
+    onChange(RichUtils.toggleBlockType(newEditorState, entityKey));
     return 'handled';
   };
-  const _onBulletPoints = () => {
-    onChange(RichUtils.toggleBlockType(editorState, 'unordered-list-item'));
+
+  const _onAddQuote = () => {
+    const selection = editorState.getSelection();
+    const content = editorState.getCurrentContent();
+    const contentWithEntity = content.createEntity('QUOTE', 'MUTABLE');
+    const entityKey = contentWithEntity.getLastCreatedEntityKey();
+    const newEditorState = EditorState.push(
+      editorState,
+      contentWithEntity,
+      entityKey,
+    );
+    onChange(RichUtils.toggleBlockType(newEditorState, entityKey));
+    console.log('content', content);
+    console.log('contentWithEntity', contentWithEntity);
+    console.log('entityKey', entityKey);
+    console.log('newEditorState', newEditorState);
+    return 'handled';
   };
-  const _onOrderedList = () => {
-    onChange(RichUtils.toggleBlockType(editorState, 'ordered-list-item'));
-  };
+
 
   return (
     <div className="text-editor-container">
@@ -74,8 +99,12 @@ const TextEditor = () => {
         <div className="edit-text-icon" onClick={_onItalicClick}><FaItalic className="icon" /></div>
         <div className="edit-text-icon" onClick={_onUnderlineClick}><FaUnderline className="icon" /></div>
         <div className="edit-text-icon" onClick={_onAddLink}><FaLink className="icon" /></div>
+        <div className="edit-text-icon" onClick={_onAddQuote}><FaQuoteLeft className="icon" /></div>
         <div className="edit-text-icon" onClick={_onBulletPoints}><FaListUl className="icon" /></div>
         <div className="edit-text-icon" onClick={_onOrderedList}><FaListOl className="icon" /></div>
+        <div className="edit-text-icon" onClick={_onHeading}><FaHeading className="icon" /></div>
+
+
       </div>
       <div className="post-text">
         <Editor
