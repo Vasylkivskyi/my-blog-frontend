@@ -89,8 +89,6 @@ const TextEditor = () => {
         <div className="edit-text-icon" onClick={_onBulletPoints}><FaListUl className="icon" /></div>
         <div className="edit-text-icon" onClick={_onOrderedList}><FaListOl className="icon" /></div>
         <div className="edit-text-icon" onClick={_onHeading}><FaHeading className="icon" /></div>
-
-
       </div>
       <div className="post-text">
         <Editor
