@@ -6,7 +6,6 @@ import {
 import './textEditor.scss';
 import { EditorState, RichUtils } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
-import addQuotePlugin from './addQuotePlugin';
 import addLinkPlugin from './addLinkPlugin';
 
 
@@ -15,7 +14,7 @@ const TextEditor = () => {
     EditorState.createEmpty(),
   );
 
-  const plugins = [addLinkPlugin, addQuotePlugin];
+  const plugins = [addLinkPlugin];
 
   const onChange = (someState) => setEditorState(someState);
 
@@ -74,20 +73,7 @@ const TextEditor = () => {
   };
 
   const _onAddQuote = () => {
-    const selection = editorState.getSelection();
-    const content = editorState.getCurrentContent();
-    const contentWithEntity = content.createEntity('QUOTE', 'MUTABLE');
-    const entityKey = contentWithEntity.getLastCreatedEntityKey();
-    const newEditorState = EditorState.push(
-      editorState,
-      contentWithEntity,
-      entityKey,
-    );
-    onChange(RichUtils.toggleBlockType(newEditorState, entityKey));
-    console.log('content', content);
-    console.log('contentWithEntity', contentWithEntity);
-    console.log('entityKey', entityKey);
-    console.log('newEditorState', newEditorState);
+    onChange(RichUtils.toggleBlockType(editorState, 'blockquote'));
     return 'handled';
   };
 
