@@ -1,0 +1,39 @@
+@import '../../styles/breakpoints';
+@import '../../styles/colors';
+
+.menu-container {
+  margin-right: 20px;
+  .menu-buttons {
+    display: flex;
+    align-content: center;
+    font-size: 25px;
+  }
+  .pages {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 60%;
+    bottom: 0;
+    background: $background;
+    box-shadow: 1px 1px 6px $black;
+
+    &.pages-open {
+      position: fixed;
+      left: 0;
+      right: 60%;
+    }
+
+    &.pages-close {
+      position: fixed;
+      left: 0;
+      display: none;
+    }
+
+    .close {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './nav.scss';
 import { Link, withRouter } from 'react-router-dom';
+import Menu from '../menu/Menu';
 import Info from '../info/Info';
 import Share from '../share/Share';
 
@@ -11,9 +12,12 @@ const Nav: React.FC<WithRouterInterface> = ({ location }) => {
   return (
     <nav className={`navbar ${cssClass}`}>
       <div className="space-between">
-        <Link to="/">
-          <h1 className="site-name">Inside the flow</h1>
-        </Link>
+        <div className="title">
+          <Menu />
+          <Link to="/">
+            <h1 className="site-name">Inside the flow</h1>
+          </Link>
+        </div>
         {!(location.pathname !== '/register'
         || location.pathname !== '/admin') && <Share />}
       </div>

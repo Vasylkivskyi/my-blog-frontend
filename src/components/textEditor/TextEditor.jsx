@@ -6,6 +6,8 @@ import {
 import './textEditor.scss';
 import { EditorState, RichUtils } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
+import { MdSave } from 'react-icons/md';
+import { stateToHTML } from 'draft-js-export-html';
 import addLinkPlugin from './addLinkPlugin';
 
 
@@ -50,6 +52,20 @@ const TextEditor = () => {
     onChange(RichUtils.toggleBlockType(editorState, 'header-three'));
   };
 
+  const onSubmit = () => {
+    const content = editorState.getCurrentContent();
+    const html = stateToHTML(content); // converting editor state to HTML
+    console.log(html);
+    /* To convert HTML editor state use https://www.npmjs.com/package/draft-js-import-html
+    in componentDidMount convert html to editor state using something like this:
+      const newEditorState = EditorState.push(
+        editorState,
+        contentWithEntity,
+        entityKey,
+      );
+    */
+  };
+
   const _onAddLink = () => {
     const selection = editorState.getSelection();
     // eslint-disable-next-line no-alert
@@ -68,7 +84,7 @@ const TextEditor = () => {
       contentWithEntity,
       entityKey,
     );
-    onChange(RichUtils.toggleBlockType(newEditorState, entityKey));
+    onChange(RichUtils.toggleLink(newEditorState, selection, entityKey));
     return 'handled';
   };
 
@@ -98,6 +114,10 @@ const TextEditor = () => {
           plugins={plugins}
           placeholder="New article's text..."
         />
+      </div>
+      <div className="btn save" onClick={onSubmit}>
+Save
+        <MdSave className="icon" />
       </div>
     </div>
   );
