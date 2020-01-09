@@ -17,7 +17,7 @@ const Menu = () => {
       <div className="menu-buttons">
         <AiOutlineMenu onClick={handleOpening} />
       </div>
-      <div className={isShowed}>
+      <div className={isShowed} onClick={handleClosing}>
         <div className="close">
           <AiOutlineClose className="close-button" onClick={handleClosing} />
         </div>
@@ -41,7 +41,6 @@ const Menu = () => {
             <span className="menu-item">Sign Out</span>
           </li>
         </ul>
-        <div className="curtain" onClick={handleClosing} />
       </div>
     </div>
   );

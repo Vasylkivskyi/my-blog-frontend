@@ -61,8 +61,16 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 1rem;
-    font-size: 25px;
+    padding: 3rem;
+    font-size: 35px;
+
+    .close-button {
+      color: $violet;
+
+      &:hover {
+        color: $white;
+      }
+    }
   }
 
   .menu {
@@ -76,8 +84,6 @@
 
       .menu-item {
         color: $violet;
-        display: block;
-        width: 100%;
         cursor: pointer;
 
         &:hover {
