@@ -11,6 +11,7 @@ import Register from './containers/register/Register';
 import AdminHomepage from './containers/Admin/adminHomepage/AdminHomepage';
 import AdminPosts from './containers/Admin/posts/AdminPosts';
 import NewPost from './containers/Admin/newPost/NewPost';
+import About from './containers/About/About';
 
 const App: React.FC = () => (
   <Router>
@@ -27,6 +28,7 @@ const App: React.FC = () => (
         <Switch>
           <Route path="/" exact component={PostList} />
           <Route path="/register" exact component={Register} />
+          <Route path="/about" exact component={About} />
           <Route path="/admin" exact component={AdminHomepage} />
           <Route path="/admin/posts" exact component={AdminPosts} />
           <Route path="/admin/posts/new" exact component={NewPost} />

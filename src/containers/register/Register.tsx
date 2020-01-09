@@ -11,7 +11,7 @@ const Register: React.FC = () => {
 
   return (
     <div className="register-container">
-      <h1>Registration</h1>
+      <h1>Sign In</h1>
       <div className="register-card">
         <button type="button" className="btn register-btn">
 Enter with Google account

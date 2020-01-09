@@ -18,6 +18,15 @@
 
     a {
       border: none;
+
+      h1 {
+        @media #{$phablet} {
+          font-size: 2.2em;
+        }
+        @media #{$only-on-mobile} {
+          font-size: 1.9em;
+        }
+      }
     }
   }
   &.without-info {

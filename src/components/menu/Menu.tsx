@@ -1,29 +1,47 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import './menu.scss';
+import { Link, withRouter } from 'react-router-dom';
 
 const Menu = () => {
-  const [isShowed, setShowing] = useState(false);
+  const [isShowed, setShowing] = useState('pages');
 
   const handleOpening = () => {
-    setShowing(!isShowed);
+    setShowing('pages-open');
   };
-  console.log(isShowed);
+  const handleClosing = () => {
+    setShowing('pages-close');
+  };
   return (
     <div className="menu-container">
-      <div className="menu-buttons" onClick={handleOpening}>
-        {!isShowed ? <AiOutlineMenu /> : <AiOutlineClose />}
+      <div className="menu-buttons">
+        <AiOutlineMenu onClick={handleOpening} />
       </div>
-      <div className={`pages ${isShowed ? 'pages-open' : 'pages-close'}`}>
+      <div className={isShowed}>
         <div className="close">
-          <AiOutlineClose className="close-button" onClick={handleOpening} />
+          <AiOutlineClose className="close-button" onClick={handleClosing} />
         </div>
         <ul className="menu">
-          <li className="page-link">1</li>
-          <li className="page-link">2</li>
-          <li className="page-link">3</li>
-          <li className="page-link">4</li>
+          <li className="page-link">
+            <Link to="/">
+              <span className="menu-item">Homepage</span>
+            </Link>
+          </li>
+          <li className="page-link">
+            <Link to="/about">
+              <span className="menu-item">About</span>
+            </Link>
+          </li>
+          <li className="page-link auth">
+            <Link to="/register">
+              <span className="menu-item">SignIn</span>
+            </Link>
+          </li>
+          <li className="page-link auth">
+            <span className="menu-item">Sign Out</span>
+          </li>
         </ul>
+        <div className="curtain" onClick={handleClosing} />
       </div>
     </div>
   );

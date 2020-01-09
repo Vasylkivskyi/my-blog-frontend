@@ -10,30 +10,80 @@
   }
   .pages {
     position: fixed;
-    left: 0;
+    left: -100%;
     top: 0;
-    right: 60%;
     bottom: 0;
     background: $background;
     box-shadow: 1px 1px 6px $black;
+  }
+  .pages-open {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    background: rgba($background, 0.9);
+    box-shadow: 1px 1px 6px $black;
+    animation: slideIn 0.6s forwards ease;
+  }
 
-    &.pages-open {
-      position: fixed;
-      left: 0;
-      right: 60%;
+  @keyframes slideIn {
+    from {
+      left: -100%;
     }
-
-    &.pages-close {
-      position: fixed;
+    to {
       left: 0;
-      display: none;
     }
+  }
 
-    .close {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
+  .pages-close {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    background: rgba($background, 0.9);
+    box-shadow: 1px 1px 6px $black;
+    animation: slideOut 0.6s backwards ease;
+  }
+
+  @keyframes slideOut {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  .close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    font-size: 25px;
+  }
+
+  .menu {
+    list-style: none;
+
+    .page-link {
       padding: 1rem;
+      font-size: 2em;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+
+      .menu-item {
+        color: $violet;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          color: $white;
+        }
+      }
     }
   }
 }
