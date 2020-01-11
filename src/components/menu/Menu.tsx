@@ -34,7 +34,7 @@ const Menu = () => {
           </li>
           <li className="page-link auth">
             <Link to="/register">
-              <span className="menu-item">SignIn</span>
+              <span className="menu-item">Sign In</span>
             </Link>
           </li>
           <li className="page-link auth">
