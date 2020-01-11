@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import './menu.scss';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   const [isShowed, setShowing] = useState('pages');
